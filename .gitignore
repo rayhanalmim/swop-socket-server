@@ -1,0 +1,13 @@
+.env
+
+node_modules
+/node_modules
+node_modules/
+
+public
+/public
+
+./bun.lockb
+bun.lockb
+/bun.lockb
+.bun.lockb
