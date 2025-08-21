@@ -8,9 +8,17 @@ const channelUserSchema = new Schema(
       required: [true, 'Channel ID is required'],
     },
     userId: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
+      type: Schema.Types.Mixed, // Can be ObjectId or String (for eth addresses)
       required: [true, 'User ID is required'],
+    },
+    userType: {
+      type: String,
+      enum: ['mongoId', 'privyId', 'ethAddress'],
+      default: 'mongoId',
+    },
+    displayName: {
+      type: String,
+      default: '',
     },
     role: {
       type: String,

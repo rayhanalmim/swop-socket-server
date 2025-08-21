@@ -1,4 +1,3 @@
-.env
 
 node_modules
 /node_modules
@@ -11,3 +10,4 @@ public
 bun.lockb
 /bun.lockb
 .bun.lockb
+config.bat

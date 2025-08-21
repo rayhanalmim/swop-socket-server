@@ -19,6 +19,20 @@ const channelSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    createdBy: {
+      type: String,
+      required: [true, 'Creator ID is required'],
+      // Could be privyId or ethAddress
+    },
+    groupType: {
+      type: String,
+      enum: ['regular', 'ethBased'],
+      default: 'regular',
+    },
+    avatarUrl: {
+      type: String,
+      default: '',
+    },
   },
   {
     timestamps: true,
