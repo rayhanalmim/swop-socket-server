@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 const ensureUserExists = async (userId) => {
   try {
     if (!userId) return null;
+    console.log(userId);
     
     // Check if this is a Privy ID
     if (userId.startsWith('did:privy:')) {
@@ -136,6 +137,7 @@ export const handlePresenceTracking = (socket, anthillChat) => {
   socket.on('disconnect', async () => {
     try {
       const userId = socket.userId; 
+      console.log(userId);
       // Mark user as offline
       await redisClient.hset(`presence:${userId}`, 'status', 'offline');
       await redisClient.hset(`presence:${userId}`, 'lastSeen', Date.now());
